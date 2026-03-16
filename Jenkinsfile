@@ -28,4 +28,9 @@ pipeline {
             junit allowEmptyResults: true, testResults: '**/test-reports/*.xml'
         }
     }
+    stage('Build') {
+    steps {
+        bat 'mvn clean package'
+    }
+}
 }
